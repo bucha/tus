@@ -27,6 +27,6 @@ defmodule Tus.Application do
       |> Enum.into(%{})
       |> Map.put(:cache_name, Module.concat(controller, TusCache))
 
-    worker(config.cache, [config], [])
+    worker(config.cache, [config], [id: Module.concat(controller, TusCache)])
   end
 end

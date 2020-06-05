@@ -7,7 +7,7 @@ defmodule Tus.Cache.Memory do
     GenServer.start_link(
       __MODULE__,
       [
-        {:ets_table_name, :tus_cache_table},
+        {:ets_table_name, cache_name},
         {:log_limit, 1_000_000}
       ],
       name: cache_name
